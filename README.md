@@ -4,57 +4,59 @@ A web-based Task Management System built using Django.
 
 ## Project Overview
 
-This project is being developed to manage users and their tasks through a simple web-based application.
+The Task Management System is a web-based application designed to manage users and their tasks through a simple and user-friendly interface.
 
-The project is currently under development. The initial version includes user authentication and a dashboard.
+The project is currently under development. The current version includes user authentication, dashboard functionality, and complete basic task CRUD operations.
 
 ## Technologies Used
 
 - Python
 - Django
-- HTML
-- CSS
+- HTML5
+- CSS3
 - SQLite
 - Git
 - GitHub
 
 ## Current Features
 
-- User Login
-- Django User Authentication
-- Secure password authentication using Django
+### User Authentication
+
+- User login functionality
+- Django built-in authentication system
+- Secure password authentication
 - User session management
-- Dashboard
-- CSRF protection
+- Login protection using `@login_required`
+- CSRF protection for POST requests
 
-## Project Structure
+### Task Management
 
-```text
-TaskManagement/
-│
-├── config/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
-│
-├── users/
-│   ├── migrations/
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── urls.py
-│   ├── views.py
-│   └── tests.py
-│
-├── templates/
-│   ├── login.html
-│   └── dashboard.html
-│
-├── static/
-│   └── css/
-│       └── login.css
-│
-├── db.sqlite3
-├── manage.py
-└── README.md
+- Create new tasks
+- View tasks on the dashboard
+- Edit/update existing tasks
+- Delete tasks with confirmation
+- Task status management
+- Task priority management
+- Task due date management
+
+### Task Fields
+
+Each task contains:
+
+- Title
+- Description
+- Status
+- Priority
+- Due Date
+- Created Date/Time
+
+## CRUD Operations
+
+The application currently supports the basic CRUD operations:
+
+| Operation | Functionality |
+|-----------|---------------|
+| Create | Create a new task |
+| Read | View tasks on the dashboard |
+| Update | Edit existing task details |
+| Delete | Delete an existing task |
