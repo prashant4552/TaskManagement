@@ -20,7 +20,10 @@
         <p class="subtitle">Welcome back! Login to manage your tasks</p>
 
         <form method="POST">
-          {% csrf_token %}
+          {% csrf_token %} {% if error %}
+          <p class="error-message">{{ error }}</p>
+          {% endif %}
+
           <div class="form-group">
             <label for="username"> Username </label>
 

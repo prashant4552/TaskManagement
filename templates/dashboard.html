@@ -1,21 +1,68 @@
-{% load static %}
-
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Dashboard | Task Management System</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <h1>Task Management System</h1>
 
-    <h1>Welcome to Task Management System</h1>
+    <h2>Dashboard</h2>
 
-    <p>You are successfully logged in.</p>
+    <a href="{% url 'create_task' %}"> Create New Task </a>
 
-</body>
+    <br /><br />
+
+    {% if tasks %}
+
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Due Date</th>
+          <th>Created At</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for task in tasks %}
+
+        <tr>
+          <td>{{ task.title }}</td>
+
+          <td>{{ task.description }}</td>
+
+          <td>{{ task.status }}</td>
+
+          <td>{{ task.priority }}</td>
+
+          <td>{{ task.due_date }}</td>
+
+          <td>{{ task.created_at }}</td>
+
+          <td>
+            <a href="{% url 'edit_task' task.id %}"> Edit </a>
+
+            <a href="{% url 'delete_task' task.id %}"> Delete </a>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% else %}
+
+    <p>No tasks available.</p>
+
+    {% endif %}
+  </body>
 </html>
